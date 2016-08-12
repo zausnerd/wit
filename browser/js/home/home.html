@@ -2,8 +2,13 @@
     <h1>Angular Chatter</h1>
     <div class='container'>
         <div>
+            <form role='form' novalidate name='form'>
+                <div class='form-group'>
+                    <input type='text' style='width: 40%' required ng-max='50' ng-model='screenname' focus>
+                    <button class='btn btn-sm btn-primary' ng-enable='form.$valid' ng-click="changeNickname(screenname)">Change Screen name</button>
+                </div>
+            </form>
             You are known as: <span ng-bind="nickName"></span>.
-            <br/>Change your nickname with <code>/nick [yourNewNick]</code>
             <div class='row'>
                 <div class='col-md-9'>
                     <chat-box></chat-box>

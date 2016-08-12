@@ -1,12 +1,13 @@
 'use strict';
 window.app = angular.module('FullstackGeneratedApp', [
-    'fsaPreBuilt', 
-    'ui.router', 
-    'ui.bootstrap', 
+    'fsaPreBuilt',
+    'ui.router',
+    'ui.bootstrap',
     'btford.socket-io',
-    'ngAnimate', 
+    'ngAnimate',
     'ngResource',
     'ngSanitize',
+    'ui.ace'
 ])
 .value('nickName', 'anonymous');
 

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <base href="/" />
     <title>Fullstack Academy Generated Application</title>
@@ -11,11 +12,27 @@
     <script src="/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="/angular-ui-bootstrap/ui-bootstrap.js"></script>
     <script src="/angular-ui-bootstrap/ui-bootstrap-tpls.js"></script>
-    <script src="/socket.io-client/socket.io.js"></script>
+    <script src="/angular-socket-io/socket.js"></script>
+    <!-- <script src="/socket.io-client/socket.io.js"></script> -->
+    <script src="/socket.io-client/dist/socket.io.js"></script>
+    <script src="https://cdn.socket.io/socket.io-1.0.6.js"></script>
+
+    <!-- bower:js -->
+    <script src="/jquery/dist/jquery.js"></script>
+    <script src="/es5-shim/es5-shim.js"></script>
+    <!-- <script src="/angular/angular.js"></script> -->
+    <script src="/json3/lib/json3.min.js"></script>
+    <script src="/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/angular-resource/angular-resource.js"></script>
+    <script src="/angular-cookies/angular-cookies.js"></script>
+    <script src="/angular-sanitize/angular-sanitize.js"></script>
+    <script src="/angular-route/angular-route.js"></script>
     <script src="/main.js"></script>
 </head>
+
 <body ng-app="FullstackGeneratedApp">
     <navbar></navbar>
     <div id="main" ui-view></div>
 </body>
+
 </html>

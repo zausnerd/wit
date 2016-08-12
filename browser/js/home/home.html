@@ -1,14 +1,7 @@
 <section id="home">
     <h1>Angular Chatter</h1>
-    <div style="height: 200px" ui-ace="{
-  useWrapMode : true,
-  showGutter: false,
-  theme:'twilight',
-  mode: 'xml',
-  firstLineNumber: 5,
-  onLoad: aceLoaded,
-  onChange: aceChanged
-}"></div>
+    <!-- <div class="ace_gutter"></div>
+    <div class="ace_scroller"></div> -->
     <div class='container'>
         <div>
             You are known as: <span ng-bind="nickName"></span>.
@@ -33,4 +26,15 @@
             </div>
         </div>
     </div>
-</section>
+    <h2>Encrypter</h2>
+      <div ui-ace="{
+      useWrapMode : true,
+      showGutter: false,
+      theme:'solarized_dark',
+      mode: 'javascript',
+      enableBasicAutocompletion: true,
+      enableLiveAutocompletion: true
+    }" style="height: 200px; z-index: 0; width: 400px;">function encrypter(input) {
+
+}   </div>
+    </section>

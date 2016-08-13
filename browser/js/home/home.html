@@ -1,11 +1,15 @@
 <section id="home">
-    <h1>Angular Chatter</h1>
-    <!-- <div class="ace_gutter"></div>
-    <div class="ace_scroller"></div> -->
+    <h1>CryptoChat</h1>
+
     <div class='container'>
         <div>
+            <form role='form' novalidate name='form'>
+                <div class='form-group'>
+                    <input type='text' style='width: 300px' required ng-max='50' ng-model='screenname' focus>
+                    <button class='btn btn-sm btn-primary' ng-enable='form.$valid' ng-click="changeNickname(screenname)">Change Screen name</button>
+                </div>
+            </form>
             You are known as: <span ng-bind="nickName"></span>.
-            <br/>Change your nickname with <code>/nick [yourNewNick]</code>
             <div class='row'>
                 <div class='col-md-9'>
                     <chat-box></chat-box>
@@ -28,27 +32,25 @@
     </div>
     <span>
         <h2>Encrypter</h2>
-        <div ui-ace="{
+        <div ng-model="encryptFunction" ui-ace="{
         useWrapMode : true,
         showGutter: true,
         theme:'solarized_dark',
         mode: 'javascript',
         enableBasicAutocompletion: true,
         enableLiveAutocompletion: true
-    }" style="height: 200px; z-index: 0; width: 48vw;">function encrypter(input) {
-
-}       </div>
+    }" style="height: 200px; z-index: 0; width: 48vw;"></div>
     </span>
     <span>
         <h2>Decrypter</h2>
-        <div ui-ace="{
+        <div ng-model="decryptFunction" ui-ace="{
           useWrapMode : true,
           showGutter: true,
           theme:'solarized_dark',
           mode: 'javascript',
           enableBasicAutocompletion: true,
           enableLiveAutocompletion: true
-    }" style="height: 200px; z-index: 0; width: 48vw;">function decrypter(input) {
+    }"       style="height: 200px; z-index: 0; width: 48vw;">function decrypter(input) {
 
 }   </div>
     </span>

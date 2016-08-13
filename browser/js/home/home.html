@@ -30,31 +30,6 @@
             </div>
         </div>
     </div>
-    <span>
-        <h2>Encrypter</h2>
-        <div ng-model="encryptFunction" ui-ace="{
-        useWrapMode : true,
-        showGutter: true,
-        theme:'solarized_dark',
-        mode: 'javascript',
-        enableBasicAutocompletion: true,
-        enableLiveAutocompletion: true
-    }" style="height: 200px; z-index: 0; width: 48vw;"></div>
-    </span>
-    <span>
-        <h2>Decrypter</h2>
-        <div ng-model="decryptFunction" ui-ace="{
-          useWrapMode : true,
-          showGutter: true,
-          theme:'solarized_dark',
-          mode: 'javascript',
-          enableBasicAutocompletion: true,
-          enableLiveAutocompletion: true
-    }"       style="height: 200px; z-index: 0; width: 48vw;">function decrypter(input) {
-
-}   </div>
-    </span>
-
      <div ng-drop="true" ng-drop-success="onDropCompleteRemove($data,$event)">
       <ul class="draggable-objects">
         <li ng-repeat="obj in listItems">

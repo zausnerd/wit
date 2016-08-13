@@ -36,18 +36,62 @@ app.controller('SocketCtrl', function ($log, $scope, chatSocket, messageFormatte
   });
 
     $scope.listItems = [{
-      name: "some name",
-      title: "title1"
+      name: "ceaserCipher",
+      title: "ceaserCipher"
     }, {
-      name: "some name2",
-      title: "title2"
+      name: "reverse",
+      title: "reverse"
     }, {
-      name: "some name3",
-      title: "title3"
+      name: "interleave",
+      title: "interleave"
     }, ];
 
-    $scope.droppedObjects = [];
+  $scope.droppedObjects = [];
   $scope.input = {};
+
+   $scope.caesarCipher = function(str, rev) {
+        var shiftFactor = rev ? 19 : 7;
+        var output = '';
+        for (var i = 0; i < str.length; i++) {
+            var c = str[i];
+            if (c.match(/[a-z]/i)) {
+                var code = str.charCodeAt(i);
+                if ((code >= 65) && (code <= 90))
+                    c = String.fromCharCode(((code - 65 + shiftFactor) % 26) + 65);
+                else if ((code >= 97) && (code <= 122))
+                    c = String.fromCharCode(((code - 97 + shiftFactor) % 26) + 97);
+            }
+            output += c;
+        }
+        return output;
+    };
+
+    $scope.reverse = function(str) {
+        return str.split("").reverse().join("");
+    }
+
+    $scope.interleave = function(str) {
+        var result = '';
+        var midPoint = Math.ceil(str.length / 2);
+        for (var i = 0; i < midPoint; i++) {
+            result += str[i] + (str[i + midPoint] || '');
+        }
+        return result;
+    }
+
+    $scope.releave = function(str) {
+        var firstHalf = '';
+        var secondHalf = '';
+        for (var i = 0; i < str.length; i += 2) {
+            firstHalf += str[i];
+            secondHalf += (str[i + 1] || '')
+        }
+        return firstHalf + secondHalf;
+    }
+
+    $scope.chainFunctions = function(str, ...funcs) {
+        return funcs.reduce((text, func) => func(text), str)
+    }
 
   $scope.onDragComplete = function(data, evt) {
     console.log("drag success, data:", data);

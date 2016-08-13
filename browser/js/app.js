@@ -8,6 +8,7 @@ window.app = angular.module('FullstackGeneratedApp', [
     'ngAnimate',
     'ngResource',
     'ngSanitize',
+    'ngDraggable'
 ])
 .value('nickName', 'anonymous');
 

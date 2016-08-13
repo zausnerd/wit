@@ -54,4 +54,26 @@
 
 }   </div>
     </span>
+
+     <div ng-drop="true" ng-drop-success="onDropCompleteRemove($data,$event)">
+      <ul class="draggable-objects">
+        <li ng-repeat="obj in listItems">
+          <div ng-drag="true" ng-drag-data="obj" data-allow-transform="true" class="item"> {{obj.title}} </div>
+        </li>
+      </ul>
+    </div>
+
+    <hr/>
+    <div ng-drop="true" ng-drop-success="onDropComplete($data,$event)" class="drop-container">
+
+    <span class="title">Drop area</span>
+
+      <div ng-repeat="obj in droppedObjects" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragComplete($data,$event)" class="item">
+        {{obj.title}}
+      </div>
+    </div>
+
+    <hr/>
+
+
     </section>
